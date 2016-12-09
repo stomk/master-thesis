@@ -1,8 +1,15 @@
 \documentclass[a4paper, twoculumn]{article}
 
+% margins
 \usepackage[hmargin=1.8cm, vmargin=3cm]{geometry}
 \setlength{\columnsep}{0.7cm}
 
+% fonts
+\usepackage{libertine}
+\usepackage{libertinust1math}
+\usepackage[T1]{fontenc}
+
+% section styles
 \makeatletter
 \renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}%
                                      {-3.25ex\@plus -1ex \@minus -.2ex}%
@@ -10,7 +17,9 @@
                                      {\normalfont\normalsize\bfseries}}
 \makeatother
 
+
 \begin{document}
+\fontdimen2\font=0.5em  % word spacing
 
 %\section*{Introduction}
 
