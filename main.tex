@@ -1,8 +1,14 @@
 \documentclass[a4paper, twoculumn]{article}
 
-\usepackage[hmargin=2cm, vmargin=3cm]{geometry}
-\setlength{\columnsep}{1cm}
+\usepackage[hmargin=1.8cm, vmargin=3cm]{geometry}
+\setlength{\columnsep}{0.7cm}
 
+\makeatletter
+\renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}%
+                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                     {1.5ex \@plus .2ex}%
+                                     {\normalfont\normalsize\bfseries}}
+\makeatother
 
 \begin{document}
 
@@ -14,7 +20,8 @@
 
 %\section*{Discussion}
 
-%\section*{Materials and Methods}
+\section*{Methods}
+\input{sections/methods.tex}
 
 %\section*{Acknowledgements}
 
