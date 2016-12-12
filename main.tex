@@ -1,4 +1,4 @@
-\documentclass[a4paper, twoculumn]{article}
+\documentclass[a4paper, twocolumn]{article}
 
 % margins
 \usepackage[hmargin=1.8cm, vmargin=3cm]{geometry}
@@ -17,13 +17,16 @@
                                      {\normalfont\normalsize\bfseries}}
 \makeatother
 
+% Table styles
+\usepackage{caption}
+
 
 \begin{document}
 \fontdimen2\font=0.5em  % word spacing
+\twocolumn
 
 %\section*{Introduction}
 
-\twocolumn
 \section*{Results}
 \input{sections/results.tex}
 
