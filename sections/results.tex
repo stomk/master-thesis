@@ -8,9 +8,9 @@ Genomic fraction of the centromeric repeat was estimated by searching PacBio sub
   \caption{Centromeric repeat genomic abundance}
   \input{tables/centromeric_repeat_genomic_abundance}
   \label{centromeric_repeat_genomic_abundance}
-  \caption*{
+  \caption*{\small{
 
-  }
+  }}
 \end{table*}
 
 
@@ -25,7 +25,37 @@ The distribution of centromeric repeats in the three medaka strain genomes were 
   \caption{Centromeric repeat distribution}
   \input{tables/centromeric_repeat_distribution}
   \label{centromeric_repeat_distribution}
-  \caption*{
+  \caption*{{\small
     RepeatMasker hits against the medaka centromeric satellite were collected over each chromosome. The centromeric positions were determined by repeat distribution on chromosomes employing the nomenclature by Levan \textit{et al} (1964). Note that Hd-rR chromosome 21 possessed centromeric repeat arrays of nearly the same length (41.6 kb and 45.5 kb) at the positions corresponding to metacentric and acrocentric, thus described as 'M/A'. M, metacentric; SM, submetacentric; ST, subtelocentric; A, acrocentric; U, unknown (due to the lack of centromeric repeats).
+  }}
+\end{table*}
+
+
+\subsection*{inter-chromosomal centromeric sequence conservation}
+Previous studies have revealed that centromeric sequences exhibit inter-chromosomal conservation that are considered to be derived from evolutionary process of chromosome formation \cite{}. In order to reveal the presence of inter-chromosomal relationship of centromeric repeats in medaka genomes, chromosomal-representative satellite monomers were collected and clustered. Specifically, centromeric repeat arrays in each chromosome were decomposed into satellite monomers by RepeatMasker. The monomer sequences within each chromosome were then clustered into groups of $>$85\% sequence similarity by DNACLUST \cite{}. For those clusters that have $\geq$10 members, the monomer with the longest sequence in the cluster was chosen as the representative monomer of the cluster. All-vs-all pairwise alignment of the representative monomers from each chromosome along with the representative monomer identified by Melters \textit{et al}. was performed and the distance between a pair of two monomers was calculated as below:
+
+\[
+  \mbox{distance} = 1 - \frac{\mbox{number of matched bases}}{\mbox{length of shorter monomer}}
+\]
+
+Based on this distance, hierarchical clustering of the chromosome-representative monomers were performed (Fig. \ref{monomer_clustering}). The chromosome-representative monomers were clustered into four groups, revealing the presence of super-chromosomal subfamilies (Table \ref{super_chromosomal_subfamily}). Many (15 out of 24) chromosomes (chr. 2, 3, 5, 6, 7, 10, 11, 12, 14, 15, 16, 18, 20, 22 and 23) were assigned exclusively to one of the four subfamilies. Five chromosomes (chr. 1, 4, 8, 13 and 19) were clustered into two or three subfamilies but significantly more monomers were classified to one subfamily over others, thus assigned to the dominant subfamily. Chromosomes 9 and 21 were classified into two subfamilies with no significant preference. Chromosome 17 and 24 were not able to be classified due to the lack or insufficient amount of centromeric repeats in either of the three assembled genomes. Overall, 22 out of 24 chromosomes were assigned to one or two subfamilies. Intriguingly, each subfamily exhibited distinct preference of centromeric positions in chromosomes; namely subfamily 1 for acrocentric, subfamily 2 and 3 for submetacentric and subtelocentric and subfamily 4 for metacentric, respectively (Table \ref{super_chromosomal_subfamiy}).
+
+% TODO: replace the figure with a nice one!
+\begin{figure*}
+  \centering
+  \label{monomer_clustering}
+  \includegraphics[width=0.5\linewidth]{representative_monomers_clustering.pdf}
+  \caption{
+    Hierarchical clustering of chromosome-representative monomers. Monomers are labeled as species, chromosome, cluster index, number of the cluster constituents.
   }
+\end{figure*}
+
+\begin{table*}
+  \centering
+  \caption{Super-chromosomal subfamilies of centromeric repeats}
+  \input{tables/super-chromosomal_subfamilies}
+  \label{super_chromosomal_subfamiy}
+  \caption*{{\small
+    Chromosomes were classified into four subfamilies (SF). Chromosomes in brackets are the ones that have significantly more amount of repeats classified into another subfamily. Hd-rR chromosome 21 possessed two distantly-positioned arrays, thus is notated as 21m (metacentric) and 21a (acrocentric; see Table \ref{centromeric_repeat_distribution} for detail). Summarizing the chromosomes from the three strains, 22 out of the 24 chromosomes were assigned to one or two subfamilies. Notation of the centromeric positions are the same as Table \ref{centromeric_repeat_distribution}.
+  }}
 \end{table*}
