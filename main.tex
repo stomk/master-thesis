@@ -25,11 +25,20 @@
 \usepackage{caption}
 \belowcaptionskip=0.5cm
 
+% Re-numbering supplementary figures and tables
+\newcommand{\beginsupplement}{%
+        \setcounter{table}{0}
+        \renewcommand{\thetable}{S\arabic{table}}%
+        \setcounter{figure}{0}
+        \renewcommand{\thefigure}{S\arabic{figure}}%
+        }
+
 
 %=====================================
 
+
 \begin{document}
-\fontdimen2\font=0.5em  % word spacing
+\fontdimen2\font=0.4em  % word spacing
 \twocolumn
 
 %\section*{Introduction}
@@ -45,5 +54,11 @@
 %\section*{Acknowledgements}
 
 %\section*{References}
+
+%= Supplements ========================
+\clearpage
+\section*{Supplements}
+\input{sections/supplements.tex}
+
 
 \end{document}
