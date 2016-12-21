@@ -1,62 +1,74 @@
+\subsection*{Genome assembly of three medaka strains}
+  Three medaka inbred strains were recently sequenced with PacBio single-molecule real-time (SMRT) sequencing and were assembled by the author's laboratory (Ichikawa \textit{et al}., unpublished; see methods for an overview of the assembly procedure). Two strains (Hd-rR and HNI) were established from northern and southern Japanese populations, respectively and the other one (HSOK) was established from eastern Korean population. The northern and southern Japanese populations are estimated to have separated 18 million years ago (MYA), whereas the ancestor of the two Japanese populations and that of the eastern Korean population are estimated to have separated 25 MYA \cite{Setiamarga}.
+
+  % TODO: move this subsection to the introduction?
+
+
 \subsection*{Genomic abundance of centromeric repeats}
-Melters \textit{et al}. (2013) estimated that the medaka candidate centromeric satellite comprise 0.32\% of the medaka genome. However this estimation can underestimate the true genomic abundance due to its identification strategy. In order to better infer the genomic abundance of the centromeric satellite, PacBio raw reads were searched for the centromeric satellite sequence.
+  Melters \textit{et al}. (2013) estimated that the medaka candidate centromeric satellite comprise 0.32\% of the medaka genome. However this estimation can underestimate the true genomic abundance due to its identification strategy. In order to better infer the genomic abundance of the centromeric satellite, PacBio raw reads were searched for the centromeric satellite sequence.
 
-Genomic fraction of the centromeric repeat was estimated by searching PacBio subreads for the representative monomer sequence. The genomic fraction in Hd-rR and HNI genomes were estimated to be $\sim$1\%, while that in the HSOK genome was $\sim$2\% (Table \ref{centromeric_repeat_genomic_abundance}). This difference is consistent with the previous observations that centromeric repeat array size in a chromosome can vary up to 20-fold within a species \cite{Miga}. Assuming the genome size to be 800 Mb, the centromeric satellite comprise 8--16 Mb of the genome, which implies each chromosome has around 500 kb of centromeric satellite on average. This is concordant with the observations that the centromere of many higher eukaryotes studied to date are characterized by hundreds to thousands of kilobases of satellite sequences \cite{Plohl}. Although quantifying the centromeric satellite in erroneous PacBio reads can lead to slight underestimation, it provides much more reliable estimation than estimating by short Sanger sequencing reads.
+  Genomic fraction of the centromeric repeat was estimated by searching PacBio subreads for the representative monomer sequence. The genomic fraction in Hd-rR and HNI genomes were estimated to be $\sim$1\%, while that in the HSOK genome was $\sim$2\% (Table \ref{centromeric_repeat_genomic_abundance}). This difference is consistent with the previous observations that centromeric repeat array size in a chromosome can vary up to 20-fold within a species \cite{Miga}. Assuming the genome size to be 800 Mb, the centromeric satellite comprise 8--16 Mb of the genome, which implies each chromosome has around 500 kb of centromeric satellite on average. This is concordant with the observations that the centromere of many higher eukaryotes studied to date are characterized by hundreds to thousands of kilobases of satellite sequences \cite{Plohl}. Although quantifying the centromeric satellite in erroneous PacBio reads can lead to slight underestimation, it provides much more reliable estimation than estimating by short Sanger sequencing reads.
 
-\begin{table*}[htp]
-  \centering
-  \caption{Centromeric repeat genomic abundance}
-  \input{tables/centromeric_repeat_genomic_abundance}
-  \label{centromeric_repeat_genomic_abundance}
-  \caption*{\small{
+  \begin{table*}[htp]
+    \centering
+    \caption{Centromeric repeat genomic abundance}
+    \input{tables/centromeric_repeat_genomic_abundance}
+    \label{centromeric_repeat_genomic_abundance}
+    \caption*{\small{
 
-  }}
-\end{table*}
+    }}
+  \end{table*}
+
+
+\subsection*{Validation of centromeric sequence assembly}
+  Repetitive nature of centromeric sequences often accompanies the possibility of misassembly \cite{}. In order to validate the assembly at the centromeric regions, PacBio raw subreads were mapped to the assembled genomes and a visual inspection was conducted.
+
+  % TODO: describe possible solutions for validating centromeric sequence assembly or current lack of it.
+
+  PacBio subread were mapped to the medaka genomes by BLASR \cite{} with a stringent mapping parameters. The assembly validity was then visually inspected by confirming an enough number of subreads covered the centromeric repeat arrays. Most part of the centromeric sequences were covered by an enough number of subreads, although  a small number of exceptions were observed in chromosomes 9, 13 and 20 in the Hd-rR genome, which contained one or two breaking points that were not spanned by subreads (Supplementary Fig. \ref{centromere_landscape}).
 
 
 \subsection*{Centromeric repeat distribution}
-The distribution of centromeric repeats in the three medaka strain genomes were revealed by searching their genomes using RepeatMasker (Table \ref{centromeric_repeat_distribution}). For those chromosomes that have $>$1 kb centromeric repeat, positions of the centromeres in chromosomes were classified, employing the nomenclature defined by Levan \textit{et al}. (1964) (Table \ref{centromeric_repeat_distribution}). Although the nomenclature was originally based on microscopic inspection of the centromeres in chromosomes rather than repeat distribution in the DNA sequence level, nevertheless the sequence-based classification conducted here is informative for inferring evolutionary relationship between the chromosomes. The composition of positional types were consistent with a previous karyotype study \cite{}. Centromeric positions of the same chromosome were mostly conserved among the strains, confirmed by observing the corresponding pair of genetic markers flanked the repeat arrays, with only two exceptions in chromosomes 4 and 6 (Supplementary Fig. \ref{centromeric_repeat_distribution}). For chromosome 4, Hd-rR had an acrocentric repeat array whereas HSOK had a metacentric array. For chromosome 6, all the three strains had acrocentric repeat arrays but those of Hd-rR and HSOK and that of HNI were on the opposite side of the chromosome. As the karyotype study has revealed that the three strains possess slightly different sets of centromeric positions \cite{}, the difference of chromosomes 4 and 6 may be derived from the \textit{bona fide} karyotype difference. Of note, Hd-rR chromosome 21 possessed metacentric and acrocentric arrays of nearly the same length (41.6 kb and 45.5 kb, respectively; Supplementary Fig. \ref{centromeric_repeat_distribution}), thus it may be a dicentric chromosome where one of the arrays forms the functional centromere whereas the other is silenced.
+  The distribution of centromeric repeats in the three medaka strain genomes were revealed by searching their genomes using RepeatMasker (Table \ref{centromeric_repeat_distribution}). For those chromosomes that have $>$1 kb centromeric repeat, positions of the centromeres in chromosomes were classified, employing the nomenclature defined by Levan \textit{et al}. (1964) (Table \ref{centromeric_repeat_distribution}). Although the nomenclature was originally based on microscopic inspection of the centromeres in chromosomes rather than repeat distribution in the DNA sequence level, nevertheless the sequence-based classification conducted here is informative for inferring evolutionary relationship between the chromosomes. The composition of positional types were consistent with a previous karyotype study \cite{}. Centromeric positions of the same chromosome were mostly conserved among the strains, confirmed by observing the corresponding pair of genetic markers flanked the repeat arrays, with only two exceptions in chromosomes 4 and 6 (Supplementary Fig. \ref{centromeric_repeat_distribution}). For chromosome 4, Hd-rR had an acrocentric repeat array whereas HSOK had a metacentric array. For chromosome 6, all the three strains had acrocentric repeat arrays but those of Hd-rR and HSOK and that of HNI were on the opposite side of the chromosome. As the karyotype study has revealed that the three strains possess slightly different sets of centromeric positions \cite{}, the difference of chromosomes 4 and 6 may be derived from the \textit{bona fide} karyotype difference. Of note, Hd-rR chromosome 21 possessed metacentric and acrocentric arrays of nearly the same length (41.6 kb and 45.5 kb, respectively; Supplementary Fig. \ref{centromeric_repeat_distribution}), thus it may be a dicentric chromosome where one of the arrays forms the functional centromere whereas the other is silenced.
 
-% TODO: prepare supplementary figure of centromeric positions shown in the genome browser.
-% TODO: provide centromeric positions from the karyotype study as a supplementary table?
+  % TODO: provide centromeric positions from the karyotype study as a supplementary table?
 
-\begin{table*}[htp]
-  \centering
-  \caption{Centromeric repeat distribution}
-  \input{tables/centromeric_repeat_distribution}
-  \label{centromeric_repeat_distribution}
-  \caption*{{\small
-    RepeatMasker hits against the medaka centromeric satellite were collected over each chromosome. The centromeric positions were determined by repeat distribution on chromosomes employing the nomenclature by Levan \textit{et al} (1964). Note that Hd-rR chromosome 21 possessed centromeric repeat arrays of nearly the same length (41.6 kb and 45.5 kb) at the positions corresponding to metacentric and acrocentric, thus described as 'M/A'. M, metacentric; SM, submetacentric; ST, subtelocentric; A, acrocentric; U, unknown (due to the lack of centromeric repeats).
-  }}
-\end{table*}
+  \begin{table*}[htp]
+    \centering
+    \caption{Centromeric repeat distribution}
+    \input{tables/centromeric_repeat_distribution}
+    \label{centromeric_repeat_distribution}
+    \caption*{{\small
+      RepeatMasker hits against the medaka centromeric satellite were collected over each chromosome. The centromeric positions were determined by repeat distribution on chromosomes employing the nomenclature by Levan \textit{et al} (1964). Note that Hd-rR chromosome 21 possessed centromeric repeat arrays of nearly the same length (41.6 kb and 45.5 kb) at the positions corresponding to metacentric and acrocentric, thus described as 'M/A'. M, metacentric; SM, submetacentric; ST, subtelocentric; A, acrocentric; U, unknown (due to the lack of centromeric repeats).
+    }}
+  \end{table*}
 
 
 \subsection*{Inter-chromosomal centromeric sequence conservation}
-Previous studies have revealed that centromeric sequences exhibit inter-chromosomal conservation that are considered to be derived from evolutionary process of chromosome formation \cite{}. In order to reveal the presence of inter-chromosomal relationship of centromeric repeats in medaka genomes, chromosomal-representative satellite monomers were collected and clustered.
+  Previous studies have revealed that centromeric sequences exhibit inter-chromosomal conservation that are considered to be derived from evolutionary process of chromosome formation \cite{}. In order to reveal the presence of inter-chromosomal relationship of centromeric repeats in medaka genomes, chromosomal-representative satellite monomers were collected and clustered.
 
-Specifically, centromeric repeat arrays in each chromosome were decomposed into satellite monomers by RepeatMasker and the monomers were clustered by DNACLUST \cite{} with $>$85\% sequence similarity threshold. For those clusters that have $\geq$10 members, the monomer with the longest sequence in the cluster was chosen as the representative monomer of the cluster. All-vs-all pairwise alignment of the representative monomers from each chromosome along with the representative monomer identified by Melters \textit{et al}. was performed and the distance between the monomers were calculated. Based on this distance, hierarchical clustering of the chromosome-representative monomers were performed (Fig. \ref{monomer_clustering}). The chromosome-representative monomers were clustered into four groups, revealing the presence of super-chromosomal subfamilies (Table \ref{super_chromosomal_subfamily}). Many (15 out of 24) chromosomes (chr. 2, 3, 5, 6, 7, 10, 11, 12, 14, 15, 16, 18, 20, 22 and 23) were assigned exclusively to one of the four subfamilies. Five chromosomes (chr. 1, 4, 8, 13 and 19) were clustered into two or three subfamilies but significantly more monomers were classified to one subfamily over others, thus assigned to the dominant subfamily. Chromosomes 9 and 21 were classified into two subfamilies with no significant preference. Chromosome 17 and 24 were not able to be classified due to the lack or insufficient amount of centromeric repeats in either of the three assembled genomes. Overall, 22 out of 24 chromosomes were assigned to one or two subfamilies. Intriguingly, each subfamily exhibited distinct preference of centromeric positions in chromosomes; namely subfamily 1 for acrocentric, subfamily 2 and 3 for submetacentric and subtelocentric and subfamily 4 for metacentric, respectively (Table \ref{super_chromosomal_subfamily}).
+  Specifically, centromeric repeat arrays in each chromosome were decomposed into satellite monomers by RepeatMasker and the monomers were clustered by DNACLUST \cite{} with $>$85\% sequence similarity threshold. For those clusters that have $\geq$10 members, the monomer with the longest sequence in the cluster was chosen as the representative monomer of the cluster. All-vs-all pairwise alignment of the representative monomers from each chromosome along with the representative monomer identified by Melters \textit{et al}. was performed and the distance between the monomers were calculated. Based on this distance, hierarchical clustering of the chromosome-representative monomers were performed (Fig. \ref{monomer_clustering}). The chromosome-representative monomers were clustered into four groups, revealing the presence of super-chromosomal subfamilies (Table \ref{super_chromosomal_subfamily}). Many (15 out of 24) chromosomes (chr. 2, 3, 5, 6, 7, 10, 11, 12, 14, 15, 16, 18, 20, 22 and 23) were assigned exclusively to one of the four subfamilies. Five chromosomes (chr. 1, 4, 8, 13 and 19) were clustered into two or three subfamilies but significantly more monomers were classified to one subfamily over others, thus assigned to the dominant subfamily. Chromosomes 9 and 21 were classified into two subfamilies with no significant preference. Chromosome 17 and 24 were not able to be classified due to the lack or insufficient amount of centromeric repeats in either of the three assembled genomes. Overall, 22 out of 24 chromosomes were assigned to one or two subfamilies. Intriguingly, each subfamily exhibited distinct preference of centromeric positions in chromosomes; namely subfamily 1 for acrocentric, subfamily 2 and 3 for submetacentric and subtelocentric and subfamily 4 for metacentric, respectively (Table \ref{super_chromosomal_subfamily}).
 
-% TODO: Add description on sequence conservation of acrocentric chromosomes in the human genome to support the result.
+  % TODO: Add description on sequence conservation of acrocentric chromosomes in the human genome to support the result.
 
-In those chromosomes that had sufficient amount of centromeric repeats in multiple strains, most (7 out of 9) chromosomes were classified into the same subfamilies among strains. One of the exceptions was chromosome 19, where representative monomers from Hd-rR and HSOK were classified into SF2 while that of HNI into SF3, although the repeats from each strain were confirmed to locate in close position of the chromosome as they were flanked by a corresponding pair of genetic markers (Supplementary Fig. \ref{centromeric_repeat_distribution}). This discordant classification may be due to assembly of different subregion of the corresponding repeat array among strains or may have been caused by misassembly in one or more strains. The other exception was chromosome 21, where the representative monomers from the acrocentric array of Hd-rR were classified into SF1, those from the metacentric array of Hd-rR and from the acrocentric array of HNI into SF3. The two acrocentric arrays from Hd-rR and HNI were located at close but distinct positions in the chromosome (Supplementary Fig. \ref{centromeric_repeat_distribution}), thus it may as well contain different repeat sequence profiles and be classified into different subfamilies.
+  In those chromosomes that had sufficient amount of centromeric repeats in multiple strains, most (7 out of 9) chromosomes were classified into the same subfamilies among strains. One of the exceptions was chromosome 19, where representative monomers from Hd-rR and HSOK were classified into SF2 while that of HNI into SF3, although the repeats from each strain were confirmed to locate in close position of the chromosome as they were flanked by a corresponding pair of genetic markers (Supplementary Fig. \ref{centromeric_repeat_distribution}). This discordant classification may be due to assembly of different subregion of the corresponding repeat array among strains or may have been caused by misassembly in one or more strains. The other exception was chromosome 21, where the representative monomers from the acrocentric array of Hd-rR were classified into SF1, those from the metacentric array of Hd-rR and from the acrocentric array of HNI into SF3. The two acrocentric arrays from Hd-rR and HNI were located at close but distinct positions in the chromosome (Supplementary Fig. \ref{centromeric_repeat_distribution}), thus it may as well contain different repeat sequence profiles and be classified into different subfamilies.
 
+  \begin{figure*}
+    \centering
+    \includegraphics[width=0.5\linewidth]{representative_monomers_clustering.pdf}
+    \caption{
+      Hierarchical clustering of chromosome-representative monomers. Monomers are labeled as species, chromosome, cluster index, number of the cluster constituents.
+    }
+    \label{monomer_clustering}
+  \end{figure*}
+  % TODO: replace the figure with a nice one!
 
-% TODO: replace the figure with a nice one!
-\begin{figure*}
-  \centering
-  \includegraphics[width=0.5\linewidth]{representative_monomers_clustering.pdf}
-  \caption{
-    Hierarchical clustering of chromosome-representative monomers. Monomers are labeled as species, chromosome, cluster index, number of the cluster constituents.
-  }
-  \label{monomer_clustering}
-\end{figure*}
-
-\begin{table*}
-  \centering
-  \caption{Super-chromosomal subfamilies of centromeric repeats}
-  \input{tables/super-chromosomal_subfamilies}
-  \label{super_chromosomal_subfamily}
-  \caption*{{\small
-    Chromosomes were classified into four subfamilies (SF). Chromosomes in brackets are the ones that have significantly more amount of repeats classified into another subfamily. Hd-rR chromosome 21 possessed two distantly-positioned arrays, thus is notated as 21m (metacentric) and 21a (acrocentric; see Table \ref{centromeric_repeat_distribution} for detail). Summarizing the chromosomes from the three strains, 22 out of the 24 chromosomes were assigned to one or two subfamilies. Notation of the centromeric positions are the same as Table \ref{centromeric_repeat_distribution}.
-  }}
-\end{table*}
+  \begin{table*}
+    \centering
+    \caption{Super-chromosomal subfamilies of centromeric repeats}
+    \input{tables/super-chromosomal_subfamilies}
+    \label{super_chromosomal_subfamily}
+    \caption*{{\small
+      Chromosomes were classified into four subfamilies (SF). Chromosomes in brackets are the ones that have significantly more amount of repeats classified into another subfamily. Hd-rR chromosome 21 possessed two distantly-positioned arrays, thus is notated as 21m (metacentric) and 21a (acrocentric; see Table \ref{centromeric_repeat_distribution} for detail). Summarizing the chromosomes from the three strains, 22 out of the 24 chromosomes were assigned to one or two subfamilies. Notation of the centromeric positions are the same as Table \ref{centromeric_repeat_distribution}.
+    }}
+  \end{table*}

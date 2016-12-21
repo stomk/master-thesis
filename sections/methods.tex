@@ -1,3 +1,11 @@
+\subsection*{Sequencing and genome assembly}
+Sequencing and assembling the three medaka strain genomes were carried out by Kazuki Ichikawa and Jun Yoshimura in the same laboratory. The detail of the methods will be described in Ichikawa \textit{et al}. (unpublished). Here a brief overview of the methods is given.
+
+The genomes were sequenced with PacBio SMRT sequencing and were assembled into contigs using FALCON assembler. The contigs were then mapped to the chromosomes using genetic markers. As to the Hd-rR genome, the contigs were scaffolded using BAC- and fosmid-end pair sequencing reads and a number of unanchored contigs were positioned into the chromosomes using Hi-C contact frequency data. The whole process produced 734 Mb, 678 Mb and 744 Mb assembly of Hd-rR, HNI and HSOK genomes, respectively.
+
+\subsection*{Validating centromeric sequence assembly}
+
+
 \subsection*{Estimating genomic abundance of centromeric repeats}
 In order to minimize the effect of high error rate of PacBio sequencing on abundance estimation of the centromeric repeats, only high quality subreads were used for this step. Specifically, subreads were filtered with the criteria that average base quality over the all bases $>$10. Also, subreads shorter than 1 kb were excluded. The filtered subreads were then scanned by RepeatMasker with a sensitive setting using the medaka representative centromeric satellite monomer sequence as a custom library. Genomic fraction of the medaka centromeric satellite for each strain was estimated by the ratio of total amount of masked centromeric satellite in the total length of the filtered subreads (Table \ref{centromeric_repeat_genomic_abundance}).
 
