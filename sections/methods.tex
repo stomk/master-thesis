@@ -1,7 +1,7 @@
 \subsection*{Sequencing and genome assembly}
 Sequencing and assembling the three medaka strain genomes were carried out by Kazuki Ichikawa and Jun Yoshimura in the same laboratory. The detail of the methods will be described in Ichikawa \textit{et al}. (unpublished). Here a brief overview of the methods is given.
 
-The genomes were sequenced with PacBio SMRT sequencing and were assembled into contigs using FALCON assembler. The contigs were then mapped to the chromosomes using genetic markers. As to the Hd-rR genome, the contigs were scaffolded using BAC- and fosmid-end pair sequencing reads and a number of unanchored contigs were positioned into the chromosomes using Hi-C contact frequency data. The whole process produced 734 Mb, 678 Mb and 744 Mb assembly of Hd-rR, HNI and HSOK genomes, respectively.
+The genomes were sequenced with PacBio SMRT sequencing and were assembled into contigs using FALCON assembler \cite{}. The contigs were then polished with PacBio reads using Quiver \cite{} and with Illumina reads using Pilon \cite{}. A number of contigs that contained long centromeric repeat arrays were not polished with Pilon because it was observed that extremely more bases were corrected on centromeric regions than other genomic regions presumably due to mismapping of short reads. The polished contigs were mapped to the chromosomes using SNP genetic markers. Hd-rR contigs were further scaffolded using BAC- and fosmid-end pair reads and a number of unanchored contigs were positioned into the chromosomes using Hi-C contact frequency data.
 
 \subsection*{Validating centromeric sequence assembly}
 
