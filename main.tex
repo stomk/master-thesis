@@ -33,6 +33,8 @@
         \renewcommand{\thefigure}{S\arabic{figure}}%
         }
 
+%% References
+\usepackage{cite}
 
 %=====================================
 
@@ -44,7 +46,8 @@
 \fontdimen2\font=0.3em  % word spacing
 \twocolumn
 
-%\section*{Introduction}
+\section*{Introduction}
+\input{sections/introduction.tex}
 
 \section*{Results}
 \input{sections/results.tex}
@@ -56,7 +59,8 @@
 
 %\section*{Acknowledgements}
 
-%\section*{References}
+\bibliographystyle{unsrt}
+\bibliography{bib/master}
 
 %= Supplements ========================
 \clearpage
