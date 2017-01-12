@@ -1,40 +1,21 @@
 \subsection*{Genome assembly of three medaka strains}
-  Three medaka inbred strains were recently sequenced with PacBio single-molecule real-time (SMRT) sequencing and were assembled by the author's laboratory (Ichikawa \textit{et al}., unpublished; see Methods for an overview of the assembly procedure). Two strains (Hd-rR and HNI) were established from northern and southern Japanese populations, respectively and the other one (HSOK) was established from eastern Korean population. The northern and southern Japanese populations are estimated to have separated 18 million years ago (MYA), whereas the ancestor of the two Japanese populations and that of the eastern Korean population are estimated to have separated 25 MYA \cite{Setiamarga2009}.
+  Three medaka inbred strains were recently sequenced with PacBio single-molecule real-time (SMRT) sequencing and were assembled by the author's laboratory (Ichikawa \textit{et al}., unpublished; see Methods for an overview of the assembly procedure). Two strains (Hd-rR and HNI) were established from northern and southern Japanese populations, respectively and the other one (HSOK) was established from eastern Korean population. The two Japanese populations are estimated to have separated 18 million years ago (MYA), whereas the ancestor of the two Japanese populations and that of the eastern Korean population are estimated to have separated 25 MYA \cite{Setiamarga2009}.
 
-  % TODO: move this subsection to the introduction?
+  % NOTE: move this subsection to the introduction?
 
 
 \subsection*{Genomic abundance of centromeric repeats}
   Melters \textit{et al}. \cite{Melters2013} estimated that the medaka candidate centromeric satellite comprise 0.32\% of the medaka genome. However this estimation can underestimate the true genomic abundance due to its identification strategy. In order to better infer the genomic abundance of the centromeric satellite, PacBio raw reads were searched for the centromeric satellite sequence.
 
-  Genomic fraction of the centromeric repeat was estimated by searching PacBio subreads for the representative monomer sequence. The genomic fraction in Hd-rR and HNI genomes were estimated to be $\sim$1\%, while that in the HSOK genome was $\sim$2\% (Table \ref{centromeric_repeat_genomic_abundance}). This difference is consistent with the previous observations that centromeric repeat array size in a chromosome can vary up to 20-fold within a species \cite{Miga2014}. Assuming the genome size to be 800 Mb, the centromeric satellite comprise 8--16 Mb of the genome, which implies each chromosome has around 500 kb of centromeric satellite on average. This is concordant with the observations that the centromere of many higher eukaryotes studied to date are characterized by hundreds to thousands of kilobases of satellite sequences \cite{Plohl2014}. Although quantifying the centromeric satellite in erroneous PacBio reads can lead to slight underestimation, it provides much more reliable estimation than estimating by short Sanger sequencing reads.
+  Genomic fraction of the centromeric repeat was estimated by searching PacBio subreads for the representative monomer sequence with RepeatMasker \cite{}. The genomic fraction in Hd-rR and HNI genomes were estimated to be $\sim$1\%, while that in the HSOK genome was $\sim$2\% (Table \ref{centromeric_repeat_genomic_abundance}). This difference is consistent with the previous observations that centromeric repeat array size in a chromosome can vary up to 20-fold among individuals within a species \cite{Miga2014}. Assuming the genome size to be 800 Mb, the centromeric satellite comprise 8--16 Mb of the genome, which implies each chromosome has around 500 kb of centromeric satellite on average. This is concordant with the observations that the centromere of many higher eukaryotes studied to date are characterized by hundreds to thousands of kilobases of satellite sequences \cite{Plohl2014}. Although quantifying the centromeric satellite in erroneous PacBio reads can lead to slight underestimation, the estimation should be more reliable than the clustering-based estimation using short Sanger reads in the previous study \cite{Melters2013}.
 
-  % TODO: move this table to supplementary?
-  \begin{table*}[htp]
-    \centering
-    \caption{Centromeric repeat genomic abundance}
-    \input{tables/centromeric_repeat_genomic_abundance}
-    \label{centromeric_repeat_genomic_abundance}
-    \caption*{\small{
-
-    }}
-  \end{table*}
-
-
-\subsection*{Validation of centromeric sequence assembly}
-  Repetitive nature of centromeric sequences often accompanies the possibility of misassembly. In order to validate the assembly at the centromeric regions, PacBio raw subreads were mapped to the assembled genomes and read coverage over centromeric regions was visually inspected on a genomic browser.
-
-  % TODO: describe possible solutions for validating centromeric sequence assembly or current lack of it.
-
-  PacBio subread were mapped to the medaka genomes by BLASR \cite{} with a stringent mapping parameters (see Methods). The assembly validity was then visually inspected on the genomic browser by confirming enough number of subreads covered the centromeric repeat arrays without breaks. Most part of the centromeric sequences were covered by enough number of subreads, although a small number of exceptions were observed in chromosomes 9, 13 and 20 in the Hd-rR genome, which contained one or two breaking points that were not spanned by subreads (Supplementary Fig. \ref{centromere_landscape}). Although PacBio read-based assembly validation cannot completely exclude the possibility of misassembly, indeed long-range ordering over the centromeric repeat arrays can be inaccurate, nevertheless relatively narrow range of assembly can be ascertained and that is surely informative for observing sequence composition of a specific chromosome or inter-chromosomal sequence similarity.
+  % TODO: add citation of RepeatMasker
 
 
 \subsection*{Centromeric repeat distribution}
-  The distribution of centromeric repeats in the three medaka strain genomes were revealed by searching their genomes using RepeatMasker (Table \ref{centromeric_repeat_distribution}). For those chromosomes that have $>$1 kb centromeric repeat, positions of the centromeres in chromosomes were classified, employing the nomenclature defined by Levan \textit{et al}. \cite{levan1964} (Table \ref{centromeric_repeat_distribution}). Although the nomenclature was originally based on microscopic inspection of the centromeres in chromosomes rather than repeat distribution in the DNA sequence level, nevertheless the sequence-based classification conducted here is informative for interpreting results of subsequent analyses. The composition of positional types were consistent with a previous karyotype study \cite{}. Centromeric positions of the same chromosome were mostly conserved among the strains, confirmed by observing the corresponding pair of genetic markers flanked the repeat arrays, with only two exceptions in chromosomes 4 and 6 (Supplementary Fig. \ref{genome_browser}). For chromosome 4, Hd-rR had an acrocentric repeat array whereas HSOK had a metacentric array. For chromosome 6, all the three strains had acrocentric repeat arrays but those of Hd-rR and HSOK and that of HNI were on the opposite end of the chromosome. As the karyotype study has revealed that the three strains possess slightly different sets of centromeric positions \cite{}, the difference of chromosomes 4 and 6 may be derived from the \textit{bona fide} karyotype difference. Of note, Hd-rR chromosome 21 possessed metacentric and acrocentric arrays of nearly the same length (41.6 kb and 45.5 kb, respectively; Supplementary Fig. \ref{genome_browser}), thus it may be a dicentric chromosome where one of the arrays forms the functional centromere whereas the other is silenced.
+  The distribution of centromeric repeats in the three medaka strain genomes were revealed by searching their genomes using RepeatMasker (Table \ref{centromeric_repeat_distribution}). For those chromosomes that have $>$1 kb centromeric repeat, positions of the centromeres in chromosomes were classified into metacentric, submetacentric, subtelocentric and acrocentric, employing the nomenclature by Levan \textit{et al}. \cite{levan1964} (Table \ref{centromeric_repeat_distribution}). Although this nomenclature originally based on karyotype observation rather than DNA sequence level and the positions induced from the two levels can slightly differ, the sequence-based classification conducted here is  nevertheless informative for interpreting subsequent analyses. The number of chromosomes classified to each type was in line with previous karyotype studies \cite{}.
 
-  % TODO: describe that assemblies truncated at centromeric repeat arrays and no chromosomal arrays were completely spanned.
-  % TODO: describe that substantial amount of centromeric repeats were contained in unanchored contigs.
-  % TODO: provide centromeric positions from the karyotype study as a supplementary table?
+  % TODO: add citation to the karyotype study or the book.
 
   \begin{table*}[htp]
     \centering
@@ -46,8 +27,14 @@
     }}
   \end{table*}
 
+  Centromeric positions of the same chromosome were mostly conserved among the strains, confirmed by observing the corresponding pair of genetic markers flanked the repeat arrays, with only two exceptions in chromosomes 4 and 6 (Fig. \ref{genome_browser}). For chromosome 4, Hd-rR had an acrocentric repeat array, whereas HSOK had a metacentric array. For chromosome 6, all the three strains had acrocentric repeat arrays but those of Hd-rR and HSOK and that of HNI located on the opposite end of the chromosome. As the karyotype study has revealed that the three strains possess slightly different sets of centromeric positions \cite{}, the difference of chromosomes 4 and 6 may be derived from \textit{bona fide} karyotype difference. Of note, Hd-rR chromosome 21 possessed metacentric and acrocentric arrays of nearly the same length (41.6 kb and 45.5 kb, respectively; Fig. \ref{genome_browser}), thus this chromosome may dicentric where one of the arrays forms the functional centromere whereas the other is silenced.
 
-\subsection*{Centromeric sequence mapping to chromosomes by FISH}
+  % TODO: describe that assemblies truncated at centromeric repeat arrays and no chromosomal arrays were completely spanned.
+  % TODO: describe that substantial amount of centromeric repeats were contained in unanchored contigs.
+  % NOTE: provide centromeric positions from the karyotype study as a supplementary table?
+
+
+\subsection*{Centromeric sequence mapping by FISH}
   To confirm that the candidate centromeric satellite sequence identified by Melters \textit{et al.} \cite{Melters2013} truly localizes to the centromeres, FISH experiment was conducted. Probe sequences were designed by the author and FISH experiments were carried out by a collaborator (see Methods).
 
   The candidate satellite was first used as a hybridization probe and signals were observed from only subsets of chromosomes (5$\sim$7 pairs of chromosome). Next additional probes were designed to complement hybridization to other chromosomes. For each chromosome, satellite monomers were collected from satellite arrays and the collected monomers were aligned back to the original array with BLASTN \cite{}. Then a monomer with the highest score was chosen as the representative monomer of the chromosome, where the score was defined as:
@@ -68,6 +55,14 @@
     }
     \label{fish_all}
   \end{figure*}
+
+
+\subsection*{Validation of centromeric sequence assembly}
+  Repetitive nature of centromeric sequences often accompanies the possibility of misassembly. In order to validate the assembly at the centromeric regions, PacBio raw subreads were mapped to the assembled genomes and read coverage over centromeric regions was visually inspected on a genomic browser.
+
+  % TODO: describe possible solutions for validating centromeric sequence assembly or current lack of it.
+
+  PacBio subread were mapped to the medaka genomes by BLASR \cite{} with a stringent mapping parameters (see Methods). The assembly validity was then visually inspected on the genomic browser by confirming enough number of subreads covered the centromeric repeat arrays without breaks. Most part of the centromeric sequences were covered by enough number of subreads, although a small number of exceptions were observed in chromosomes 9, 13 and 20 in the Hd-rR genome, which contained one or two breaking points that were not spanned by subreads (Supplementary Fig. \ref{centromere_landscape}). Although PacBio read-based assembly validation cannot completely exclude the possibility of misassembly, indeed long-range ordering over the centromeric repeat arrays can be inaccurate, nevertheless relatively narrow range of assembly can be ascertained and that is surely informative for observing sequence composition of a specific chromosome or inter-chromosomal sequence similarity.
 
 
 \subsection*{Inter-chromosomal centromeric sequence conservation}
