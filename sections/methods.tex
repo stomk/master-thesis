@@ -9,7 +9,7 @@
 
 
 \subsection*{Estimating genomic abundance of centromeric repeats}
-  In order to minimize the effect of high error rate of PacBio sequencing on abundance estimation of the centromeric repeats, only high quality subreads were used for this step. Specifically, subreads were filtered with the criteria that average base quality over the all bases $>$10. Also, subreads shorter than 1 kb were excluded. The filtered subreads were then scanned by RepeatMasker with a sensitive setting using the medaka representative centromeric satellite monomer sequence as a custom library. Genomic fraction of the medaka centromeric satellite for each strain was estimated by the ratio of total amount of masked centromeric satellite in the total length of the filtered subreads (Table \ref{centromeric_repeat_genomic_abundance}).
+  In order to minimize the effect of high error rate of PacBio sequencing on abundance estimation of the centromeric repeats, only high quality subreads were used for this step. Specifically, subreads were filtered with the criteria that average base quality over the all bases $>$10. Also, subreads shorter than 1 kb were excluded. The filtered subreads were then scanned by RepeatMasker (version 4.0.6; A.F.A. Smit, R. Hubley & P. Green RepeatMasker at http://repeatmasker.org) with a sensitive setting using the medaka representative centromeric satellite monomer sequence as a custom library. Genomic fraction of the medaka centromeric satellite for each strain was estimated by the ratio of total amount of masked centromeric satellite in the total length of the filtered subreads (Table \ref{centromeric_repeat_genomic_abundance}).
 
 
 \subsection*{Revealing centromeric repeat distribution and centromeric positions}
@@ -23,7 +23,7 @@
 
 
 \subsection*{Inter-chromosomal centromeric sequence comparison}
-  Centromeric repeat arrays in each chromosome of the three strains were decomposed into satellite monomers by RepeatMasker with sensitive setting. The monomer sequences within each chromosome were then clustered into groups of $>$85\% sequence similarity by DNACLUST \cite{}. For those clusters that have $\geq$10 members, the monomer with the longest sequence in the cluster was chosen as the representative monomer of the cluster. All-vs-all pairwise alignment of the chromosome-representative monomers along with the representative monomer identified by Melters \textit{et al}. was performed by EMBOSS needle program. The distance between a pair of two monomers was calculated as below:
+  Centromeric repeat arrays in each chromosome of the three strains were decomposed into satellite monomers by RepeatMasker with sensitive setting. The monomer sequences within each chromosome were then clustered into groups of $>$85\% sequence similarity by DNACLUST \cite{Ghodsi2011}. For those clusters that have $\geq$10 members, the monomer with the longest sequence in the cluster was chosen as the representative monomer of the cluster. All-vs-all pairwise alignment of the chromosome-representative monomers along with the representative monomer identified by Melters \textit{et al}. was performed by EMBOSS needle program. The distance between a pair of two monomers was calculated as below:
 
   \[
     \mbox{distance} = 1 - \frac{\mbox{number of matched bases}}{\mbox{length of shorter monomer}}
