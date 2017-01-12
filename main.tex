@@ -1,10 +1,10 @@
 \documentclass[a4paper, twocolumn]{article}
 
-% margins
+%% Margins
 \usepackage[hmargin=1.8cm, vmargin=3cm]{geometry}
 \setlength{\columnsep}{0.6cm}
 
-% fonts
+%% Fonts
 \usepackage{libertine}
 \usepackage{libertinust1math}
 \usepackage[T1]{fontenc}
@@ -12,7 +12,7 @@
 \usepackage{scrextend}
 \changefontsizes[11.5pt]{9.5pt}
 
-% section styles
+%% Section styles
 \makeatletter
 \renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}%
                                      {-3.25ex\@plus -1ex \@minus -.2ex}%
@@ -20,15 +20,14 @@
                                      {\normalfont\normalsize\bfseries}}
 \makeatother
 
-% Figure environments
+%% Figures and tables
 \usepackage{graphicx}
 \graphicspath{{./figures/}}
-
-% Table styles
 \usepackage{caption}
 \belowcaptionskip=0.5cm
+%\usepackage{nidanfloat}
 
-% Re-numbering supplementary figures and tables
+%% Re-numbering supplementary figures and tables
 \newcommand{\beginsupplement}{%
         \setcounter{table}{0}
         \renewcommand{\thetable}{S\arabic{table}}%
