@@ -47,6 +47,29 @@
   \end{table*}
 
 
+\subsection*{Centromeric sequence mapping to chromosomes by FISH}
+  To confirm that the candidate centromeric satellite sequence identified by Melters \textit{et al.} \cite{Melters2013} truly localizes to the centromeres, FISH experiment was conducted. Probe sequences were designed by the author and FISH experiments were carried out by a collaborator (see Methods).
+
+  The candidate satellite was first used as a hybridization probe and signals were observed from only subsets of chromosomes (5$\sim$7 pairs of chromosome). Next additional probes were designed to complement hybridization to other chromosomes. For each chromosome, satellite monomers were collected from satellite arrays and the collected monomers were aligned back to the original array with BLASTN \cite{}. Then a monomer with the highest score was chosen as the representative monomer of the chromosome, where the score was defined as:
+
+  % TODO: add citation of BLAST
+
+  \[
+    score = \sum_{\mbox{hits}} \mbox{alignment identity} \cdot \frac{\mbox{alignment length}}{\mbox{query length}}.
+  \]
+
+  Representative monomers obtained from each chromosome were then aligned to the Hd-rR genome with BLASTN and three monomers that exhibited high identity to different subsets of chromosomes were chosen for additional probes (Fig. \ref{}). The additional probes successfully hybridized to some chromosomes that the first probe failed to hybridize, although two additional probes hybridized to less number of chromosomes than expected from \textit{in silico} alignment results. When all the probes combined, signals were observed from centromeres of $\sim$13 pairs of chromosomes (Fig. \ref{fish_all}). This result confirmed that the candidate centromeric satellite truly derives from the centromeres.
+
+  \begin{figure*}[htp]
+    \centering
+    \includegraphics[width=\linewidth]{fish_all_probes.pdf}
+    \caption{
+      The candidate centromeric satellite sequence and three derivative sequences localized to the centromeres of $\sim$13 pairs of chromosomes. (left) DNA is stained with DAPI. (center) probes are stained green. (right) two images are combined.
+    }
+    \label{fish_all}
+  \end{figure*}
+
+
 \subsection*{Inter-chromosomal centromeric sequence conservation}
   Previous studies have revealed that centromeric sequences exhibit inter-chromosomal conservation that are considered to be derived from evolutionary process of chromosome formation \cite{}. In order to reveal the presence of inter-chromosomal relationship of centromeric repeats in medaka genomes, chromosomal-representative satellite monomers were collected and clustered.
 
