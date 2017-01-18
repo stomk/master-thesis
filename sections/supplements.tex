@@ -1,37 +1,49 @@
-\begin{table*}[htp]
-  \centering
-  \caption{Centromeric repeat genomic abundance}
-  \input{tables/centromeric_repeat_genomic_abundance}
-  \label{centromeric_repeat_genomic_abundance}
-  \caption*{\small{
-
-  }}
-\end{table*}
-
-\begin{table*}[htp]
+\begin{table}[htbp]
   \centering
   \caption{PacBio sequencing statistics}
   \input{tables/sequencing_stats.tex}
   \label{sequencing_stats}
-  \caption*{\small{
+\end{table}
 
-  }}
-\end{table*}
+\begin{table}[htbp]
+  \centering
+  \caption{Centromeric repeat genomic abundance}
+  \input{tables/centromeric_repeat_genomic_abundance}
+  \label{centromeric_repeat_genomic_abundance}
+\end{table}
 
-\begin{figure*}[htp]
+\begin{figure}[p]
   \centering
   \includegraphics[width=\linewidth]{centromeric_repeat_distribution.pdf}
   \caption{
     Centromeric repeat distribution
   }
   \label{genome_browser}
-\end{figure*}
+\end{figure}
 
-\begin{figure*}[htp]
+\begin{figure}[p]
   \centering
   %\includegraphics{}
   \caption{
     Centromere landscapes in the medaka genomes
   }
   \label{centromere_landscape}
-\end{figure*}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=\linewidth]{chr8_transition.pdf}
+  \caption{
+    (A, B, C) Comparison of the centromeric transitional regions of chromosome 8 of Hd-rR and HSOK.
+  }
+  \label{other_chroms_transition}
+\end{figure}
+
+\addtocounter{figure}{-1}
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=\linewidth]{chr2_transition.pdf}
+  \contcaption{
+    (D, E, F) Comparison of the centromeric transitional regions of chromosome 2 of Hd-rR and HSOK.
+  }
+\end{figure}
