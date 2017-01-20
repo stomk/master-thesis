@@ -1,34 +1,32 @@
-\subsection*{Sequencing and genome assembly}
-  Sequencing and assembling the three medaka strain genomes were carried out by Kazuki Ichikawa and Jun Yoshimura in the same laboratory. The detail of the methods will be described in Ichikawa \textit{et al}. (unpublished). Here a brief overview of the methods is given.
+\subsection*{Genome assembly}
+  Assembly of the three medaka strain genomes were carried out by Kazuki Ichikawa and Jun Yoshimura in the same laboratory. The detail of the methods will be described in Ichikawa \textit{et al}. (unpublished). Here a brief overview of the methods is described.
 
-  The genomes were sequenced with PacBio SMRT sequencing and were assembled into contigs using FALCON assembler \cite{Chin2016}. The contigs were then polished with PacBio reads using Quiver \cite{Chin2013} and with Illumina reads using Pilon \cite{Walker2014}. A number of contigs that contained long centromeric repeat arrays were not polished with Pilon because it was observed that extremely more bases were corrected on centromeric regions than other genomic regions presumably due to mismapping of short reads. The polished contigs were mapped to the chromosomes using SNP genetic markers. Hd-rR contigs were further scaffolded using BAC- and fosmid-end pair reads and a number of unanchored contigs were positioned into the chromosomes using Hi-C contact frequency data.
-
-
-\subsection*{Validating centromeric sequence assembly}
-  PacBio raw subreads were mapped to the assembled genomes by BLASR \cite{Chaisson2012}. Those mapped subreads that had i) $>$5 kb alignment length, ii) $>$80\% sequence identity over the entire alignment and iii) $>$85\% sequence identity on both the 1-kb ends of the alignment were selected for visualization on the genomic browser. The centromeric repeat regions were inspected and confirmed on the genome browser that they were covered by enough number of overlapping subreads (at least 5 subreads and typically way more reads at every position) without breaks (Supplementary Fig. \ref{centromere_landscape}).
+  The genomes were sequenced with PacBio RSII sequencer and were assembled into contigs with FALCON assembler \cite{Chin2016}. The contigs were then polished with PacBio reads using Quiver \cite{Chin2013} and with Illumina reads using Pilon \cite{Walker2014}. A number of contigs that contained long centromeric repeat arrays were not polished with Pilon because it was observed that extremely more bases were corrected on centromeric regions than other genomic regions presumably due to mismapping of short reads. The polished contigs were mapped to the chromosomes using SNP genetic markers. Hd-rR contigs were further scaffolded using BAC- and fosmid-end pair reads. Also a number of unanchored contigs were positioned into the chromosomes using Hi-C contact frequency data.
 
 
-\subsection*{Estimating genomic abundance of centromeric repeats}
-  In order to minimize the effect of high error rate of PacBio sequencing on abundance estimation of the centromeric repeats, only high quality subreads were used for this step. Specifically, subreads were filtered with the criteria that average base quality over the all bases $>$10. Also, subreads shorter than 1 kb were excluded. The filtered subreads were then scanned by RepeatMasker (version 4.0.6; A.F.A. Smit, R. Hubley \& P. Green RepeatMasker at http://repeatmasker.org) with a sensitive setting using the medaka representative centromeric satellite monomer sequence as a custom library. Genomic fraction of the medaka centromeric satellite for each strain was estimated by the ratio of total amount of masked centromeric satellite in the total length of the filtered subreads (Table \ref{centromeric_repeat_genomic_abundance}).
+\subsection*{Validation of centromeric sequence assembly}
+  PacBio raw subreads were mapped to the assembled genomes by BLASR (version 5.2.6fa6cc2) \cite{Chaisson2012} with parameters of ``{-}{-}bestn 10 {-}{-}minReadLength 10000 {-}{-}minSubreadLength 10000 {-}{-}minAlnLength 5000 {-}{-}minPctSimilarity 80''. Then the mapped subreads that have $>$85\% sequence identity in the 1-kb sequences at the both alignment ends were selected and visualized on the genomic browser. The centromeric repeat regions were manually inspected and confirmed that they were covered by enough number of overlapping subreads (at least 5 subreads and typically much more reads at every position) without breaks (Supplementary Fig. \ref{centromere_landscape}).
 
 
-\subsection*{Revealing centromeric repeat distribution and centromeric positions}
+\subsection*{Estimation of genomic abundance of centromeric repeats}
+  In order to minimize the effect of high error rate of PacBio sequencing on abundance estimation of the centromeric repeats, only high quality subreads were used for this step. Specifically, subreads were filtered with the criteria that average base quality over the all bases $>$10. Also, subreads shorter than 1 kb were excluded. The filtered subreads were then scanned by RepeatMasker (version 4.0.6; A.F.A. Smit, R. Hubley \& P. Green RepeatMasker at http://repeatmasker.org) with sensitive setting using the medaka representative centromeric satellite monomer sequence as a custom library. Genomic fraction of the medaka centromeric satellite for each strain was estimated by the ratio of total amount of masked centromeric satellite in the total length of the filtered subreads (Table \ref{centromeric_repeat_genomic_abundance}).
+
+
+\subsection*{Identification of centromeric repeats in the genomes and classification of centromeric positions}
   The three medaka strain genomes were searched for the medaka centromeric satellite by RepeatMasker with sensitive setting. For those chromosomes that have $>$1 kb centromeric repeat, positions of the centromeres were classified employing the nomenclature defined in Levan \textit{et al}. (1964). The nomenclature divides a chromosome equally into eight portions and classify the chromosome by the position of the centromere from the two most inners to the two most outers as metacentric, submetacentric, subtelocentric and acrocentric. In this study, chromosomes were classified into a portion that contains the largest amount of centromeric repeats.
 
 
-\subsection*{Centromere FISH}
+\subsection*{Centromere mapping by FISH}
   FISH experiment was carried out by Yusuke Inoue at the Department of Biological Sciences, Graduate School of Science, The University of Tokyo.
 
   Centromeric satellite DNA were synthesized by annealing and extension of two DNA oligos using TaKaRa ExTaq (TaKaRa), followed by subcloning into pCR\texttrademark II-TOPO\textregistered vector (Thermo). DNA probes were prepared by cutting and labeling the plasmid DNA with biotin, using Nick Translation Kit (Roche). Medaka fibroblast cells were treated with 0.05 $\mu$g/ml of corcemid (for probe1,2) or 1 $\mu$M of nocodazole (for probe3, 4, all) for 4--5 hours. After trypsinization, cells were hypotonically swollen in 75mM KCl for 20 minutes, fixed with ice-cold Carnoy's solution (1:3 acetic acid: methanol), then spread onto slides. After RNase treatment and denaturation of chromosomal DNA, hybridization was carried out by dropping probe DNA solution onto slides and incubating at 37\,\celsius\, for overnight. After washing, chromosomal DNA was incubated with avidin-FITC (Vector Laboratories) for 1 hour. After final wash, slides were mounted with Vectashield Plus DAPI (Vector Laboratories). Images were acquired using a fluorescence microscope (LSM710, Zeiss).
 
 
-\subsection*{Inter-chromosomal centromeric sequence comparison}
-  Centromeric repeat arrays in each chromosome of the three strains were decomposed into satellite monomers by RepeatMasker with sensitive setting. The monomer sequences within each chromosome were then clustered into groups of $>$85\% sequence similarity by DNACLUST \cite{Ghodsi2011}. For those clusters that have $\geq$10 members, the monomer with the longest sequence in the cluster was chosen as the representative monomer of the cluster. All-vs-all pairwise alignment of the chromosome-representative monomers along with the representative monomer identified by Melters \textit{et al}. was performed by needle program in EMBOSS suite \cite{Rice2000}. The distance between a pair of two monomers was calculated as below:
+\subsection*{Selection of chromosome-representative monomers and hierarchical clustering}
+  Centromeric repeat arrays in each chromosome of the three strains were decomposed into satellite monomers by RepeatMasker. The monomer sequences within each chromosome were then clustered into groups of $>$85\% sequence similarity by DNACLUST \cite{Ghodsi2011} (parameters: ``-d -l -s 0.85 {-}{-}no-k-mer-filter''). For those clusters that have $\geq$10 members, the monomer with the longest sequence in the cluster was chosen as the representative monomer of the cluster. All-vs-all pairwise alignment of the chromosome-representative monomers along with the representative monomer identified by Melters \textit{et al.} \cite{Melters2013} was performed by needle program in EMBOSS suite (version 6.5.7) \cite{Rice2000}. The distance between a pair of two monomers was calculated as below:
 
   \[
     \mbox{distance} = 1 - \frac{\mbox{number of matched bases}}{\mbox{length of shorter monomer}}
   \]
 
-  Based on this distance, hierarchical clustering of the chromosome-representative monomers were performed by "hclust" function in R with "ward.D2" method.
-
-  % TODO: Minimize the problem of uncertainty on monomer interval determination
+  Based on this distance, hierarchical clustering of the chromosome-representative monomers were performed by "hclust" function in R (version 3.2.4) with "ward.D2" method.
